@@ -2,6 +2,13 @@
 
 use Illuminate\Support\Facades\Route;
 
-Route::get('/', function () {
-    return view('LandingPage');
+route::get('/', function () {
+    return view('landingPage');
 });
+Route::get('/about', function () {
+    return view('aboutPage');
+});
+Route::get('/about', function () {
+    return view('aboutPage');
+});
+
