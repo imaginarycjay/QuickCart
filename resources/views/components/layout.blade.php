@@ -10,18 +10,18 @@
 
 <body>
 
-    <nav class=" flex justify-between container mx-auto">
-        <p>Logo here</p>
-        <div class=" w-auto gap-3 flex">
+    <nav class=" flex justify-between ml-4">
+        <p class="text-bold text-3xl text-center">A Group 7 Project</p>
+        {{-- <div class=" w-auto gap-3 flex">
             <x-navlink href="/">Home</x-navlink>
             <x-navlink href="/about">About</x-navlink>
             <x-navlink href="/products">Products</x-navlink>
-        </div>
+        </div> --}}
     </nav>
 
-    <div class="container mx-auto  mt-2">
+    {{-- <div class="container mx-auto  mt-2">
         {{ $slot }}
-    </div>
+    </div> --}}
 </body>
 
 </html>
