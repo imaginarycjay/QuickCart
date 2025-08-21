@@ -9,7 +9,7 @@
 </head>
 
 <body class="h-full bg-gray-100">
-
+{{-- 
     <nav class=" flex justify-between ml-4">
         <div class=" w-auto gap-3 flex">
             <x-navlink href="/" :active="false">Home</x-navlink>
@@ -17,7 +17,7 @@
             <x-navlink href="/about">About</x-navlink>
         </div>
     </nav>
-
+ --}}
     <header>
         {{ $header }}
     </header>
