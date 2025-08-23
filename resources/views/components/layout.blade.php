@@ -8,21 +8,12 @@
     @vite(['resources/css/app.css', 'resources/js/app.js'])
 </head>
 
-<body class="h-full bg-gray-100">
+<body class="h-full bg-gradient-to-bl from-amber-900 to-amber-950">
 
-    <nav class=" flex justify-between ml-4">
-        <div class=" w-auto gap-3 flex">
-            <x-navlink href="/" :active="false">Home</x-navlink>
-            <x-navlink href="/products">Products</x-navlink>
-            <x-navlink href="/about">About</x-navlink>
-        </div>
-    </nav>
+    <x-navbar />
 
-    <header>
-        {{ $header }}
-    </header>
-
-    <main class="container mx-auto  mt-2"> 
+    {{-- here ang main content --}}
+   <main class="container mx-auto  mt-2"> 
         {{ $slot }}
     </main>
 </body>
