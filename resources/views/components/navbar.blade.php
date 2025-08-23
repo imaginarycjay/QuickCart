@@ -39,7 +39,7 @@
 
         <!-- panel -->
         <div x-show="open" x-transition
-            class="relative top-10 ml-auto rounded-lg mr-5 w-4/10 bg-white text-gray-900 shadow-lg px-4 pb-4 max-h-fit">
+            class="relative top-10 ml-auto rounded-lg mr-5 w-4/10 bg-white text-gray-900 shadow-lg p-4 max-h-fit">
             <button @click="open = false" class="absolute top-3 right-3 text-gray-600">
                 @include('components.icons.close')
             </button>

@@ -8,8 +8,6 @@
     @vite(['resources/css/app.css', 'resources/js/app.js'])
 </head>
 
-<body class="h-full bg-gray-100">
-    <main class="container mx-auto  mt-2"> 
 <body class="h-full bg-gradient-to-bl from-amber-900 to-amber-950">
 
     <x-navbar />
