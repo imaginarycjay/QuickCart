@@ -1,9 +1,9 @@
 <nav x-data="{ open: false }"
-   class="absolute top-0 inset-x-0 z-50 px-6 py-4 flex items-center justify-between font-montserrat bg-gradient-to-b from-black/60 via-black/20 to-transparent"> 
+   class="absolute top-0 inset-x-0 z-50 px-6 py-4 flex items-center justify-between font-montserrat bg-transparent shadow-md"> 
 
    {{-- logo soon  --}}
     <div class="flex items-center gap-4"> 
-        <div class="font-bold text-lg text-white">QuickCart</div>
+        <div class="font-bold text-lg text-black">QuickCart</div>
     </div>
 
     {{-- main nav for tabvlet and desktop --}}
@@ -12,23 +12,23 @@
             <ul class="flex gap-8 rounded-md px-2 py-1 items-center">
                 <li>
                     <a href="/"
-                        class="{{ request()->routeIs('/') ? 'text-white font-bold' : 'hover:scale-105' }} text-white">Home</a>
+                        class="{{ request()->routeIs('/') ? 'text-black font-bold' : 'hover:scale-105' }} text-black">Home</a>
                 </li>
                 <li>
                     <a href="#"
-                        class="{{ request()->routeIs('') ? 'text-white font-bold' : 'hover:scale-120' }} text-white">Products</a>
+                        class="{{ request()->routeIs('') ? 'text-white font-bold' : 'hover:scale-120' }} text-black">Products</a>
                 </li>
                 <li>
                     <a href="#"
-                        class="{{ request()->routeIs('') ? 'text-white font-bold' : 'hover:scale-105' }} text-white">Orders</a>
+                        class="{{ request()->routeIs('') ? 'text-white font-bold' : 'hover:scale-105' }} text-black">Orders</a>
                 </li>
             </ul>
         </div>
 
-        <button class="text-white ">
+        <button class="text-black ">
             @include('components.icons.cart')
         </button>
-        <button @click="open = true" aria-label="Open menu" class="md:hidden text-white border-l border-gray-100 pl-2">
+        <button @click="open = true" aria-label="Open menu" class="md:hidden text-black border-l border-gray-100 pl-2">
             @include('components.icons.hamburger')
         </button>
 

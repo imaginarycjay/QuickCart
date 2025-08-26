@@ -7,7 +7,7 @@
     <title>{{ $title }}</title>
     @vite(['resources/css/app.css', 'resources/js/app.js'])
 </head>
-<body class="h-full bg-black text-white relative"> 
+<body class="h-full text-white relative"> 
     <x-navbar />
     <main {{ $attributes->merge(['class' => $full ? 'w-full' : 'container mx-auto']) }}>
         {{ $slot }}
