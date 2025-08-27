@@ -28,7 +28,7 @@
         <button class="text-black ">
             @include('components.icons.cart')
         </button>
-        <button @click="open = true" aria-label="Open menu" class="md:hidden text-black border-l border-gray-100 pl-2">
+        <button @click="open = true" aria-label="Open menu" class="md:hidden text-black border-l border-black pl-2">
             @include('components.icons.hamburger')
         </button>
 

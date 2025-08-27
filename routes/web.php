@@ -6,12 +6,5 @@ route::get('/', function () {
     return view('pages/userSide/landingPage');
 });
 
-/* Route::get('/about', function () {
-    return view('pages/aboutPage');
-}); */ 
 
-
-/* Route::get('/products', function () {
-    return view('pages/productsPage');
-}); */
-
+// changes this later into class base if naayos na ang models and controllers
