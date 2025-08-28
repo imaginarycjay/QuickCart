@@ -1,4 +1,4 @@
-<nav x-data="{ open: false }"
+<nav x-data="navbar()" @cart-updated.window="cartCount = $event.detail.count"
    class="absolute top-0 inset-x-0 z-50 px-6 py-4 flex items-center justify-between font-montserrat bg-transparent shadow-md"> 
 
    {{-- logo soon  --}}
@@ -25,8 +25,10 @@
             </ul>
         </div>
 
-        <button class="text-black ">
+        <button @click="toggleCart" class="text-black relative">
             @include('components.icons.cart')
+            <span x-show="cartCount > 0" x-text="cartCount" 
+                  class="absolute -top-2 -right-2 bg-red-500 text-white text-xs rounded-full w-5 h-5 flex items-center justify-center"></span>
         </button>
         <button @click="open = true" aria-label="Open menu" class="md:hidden text-black border-l border-black pl-2">
             @include('components.icons.hamburger')
@@ -54,4 +56,52 @@
         </div>
     </div>
 
+    {{-- Cart Sidebar --}}
+    <div x-show="cartOpen" x-cloak x-transition.opacity class="fixed inset-0 z-50 flex">
+        <div @click="cartOpen = false" class="fixed inset-0 bg-black bg-opacity-50" aria-hidden="true"></div>
+        
+        <div x-show="cartOpen" x-transition:enter="transform transition ease-in-out duration-300" 
+             x-transition:enter-start="translate-x-full" x-transition:enter-end="translate-x-0"
+             x-transition:leave="transform transition ease-in-out duration-300" 
+             x-transition:leave-start="translate-x-0" x-transition:leave-end="translate-x-full"
+             class="relative ml-auto w-full max-w-md bg-white shadow-xl p-6 overflow-y-auto">
+            
+            <button @click="cartOpen = false" class="absolute top-4 right-4">
+                @include('components.icons.close')
+            </button>
+            
+            <div class="mt-8">
+                <x-cart />
+            </div>
+        </div>
+    </div>
+
 </nav>
+
+<script>
+function navbar() {
+    return {
+        open: false,
+        cartOpen: false,
+        cartCount: 0,
+
+        async init() {
+            await this.loadCartCount();
+        },
+
+        async loadCartCount() {
+            try {
+                const response = await fetch('/api/cart');
+                const data = await response.json();
+                this.cartCount = data.count;
+            } catch (error) {
+                console.error('Failed to load cart count:', error);
+            }
+        },
+
+        toggleCart() {
+            this.cartOpen = !this.cartOpen;
+        }
+    }
+}
+</script>
